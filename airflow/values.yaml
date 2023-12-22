@@ -39,3 +39,9 @@ statsd:
     limits:
       memory: 1Gi
       cpu: '0.5'
+dags:
+  mountPath: /Users/rsvetk01/Desktop/start/branches_to_publish/branches_to_publish/dbt-airflow/airflow/dags
+  persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 1Gi
