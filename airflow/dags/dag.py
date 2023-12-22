@@ -35,7 +35,7 @@ t2 = PythonOperator(
 
 t3 = KubernetesPodOperator(
     namespace='airflow',
-    image='romansvetkin/dbt-with-git:latest',  
+    image='romansvetkin/airflow-dbt-test:0.0.2',
     cmds=["dbt", "run"],
     name="dbt-run-task",
     task_id="dbt-run-task",
@@ -50,7 +50,7 @@ t3 = KubernetesPodOperator(
 
 t4 = KubernetesPodOperator(
     namespace='airflow',
-    image='romansvetkin/dbt-with-git:latest',  
+    image='romansvetkin/airflow-dbt-test:0.0.2',
     cmds=["dbt", "test"],
     name="dbt-test-task",
     task_id="dbt-test-task",
