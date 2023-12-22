@@ -1,0 +1,41 @@
+# helm install airflow apache-airflow/airflow \
+#   --namespace airflow \
+#   --create-namespace \
+#   -f values.yaml
+#   --set executor=KubernetesExecutor \
+#   --set images.airflow.repository=romansvetkin/airflow-dbt-test \
+#   --set images.airflow.tag=latest
+
+executor: KubernetesExecutor
+workers:
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 200m
+    limits:
+      memory: 1Gi
+      cpu: '0.5'
+scheduler:
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 200m
+    limits:
+      memory: 1Gi
+      cpu: '0.5'
+web:
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 200m
+    limits:
+      memory: 1Gi
+      cpu: '0.5'
+statsd:
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 200m
+    limits:
+      memory: 1Gi
+      cpu: '0.5'
